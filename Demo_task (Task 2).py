@@ -16,8 +16,8 @@ class Envelope:
     def __gt__(self, other):
         if (self.width > other.width and self.height > other.height or
                 self.width > other.height and self.height > other.width):
-            return False
-        return True
+            return True
+        return False
 
 
 def comparison():
@@ -40,12 +40,12 @@ def comparison():
 
         if first_envelop < second_envelop:
             print("First envelop can be inserted in the second.")
-        elif second_envelop < first_envelop:
+        elif first_envelop > second_envelop:
             print("Second envelop can be inserted in the first.")
         else:
             print("Envelops can't be put in each other")
 
-        try_again = str(input('Do you want to continue? [Y/n] '))
+        try_again = str(input('Do you want to continue? [y/N*] '))
         answer = ['y', 'yes']
         if try_again.lower() not in answer:
             break
