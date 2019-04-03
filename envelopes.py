@@ -20,7 +20,7 @@ class Envelope:
         return False
 
 
-def comparison():
+def parameter_input():
 
     while True:
         try:
@@ -31,10 +31,19 @@ def comparison():
             if width1 <= 0 or width2 <= 0 or height1 <= 0 or height2 <= 0:
                 print("Width or height can't be negative or zero! Please try again..")
                 continue
+            else:
+                break
         except ValueError:
             print("Input error: entered incorrect data. Please try again.")
             continue
+    return width1, height1, width2, height2
 
+
+def comparison():
+
+    while True:
+
+        width1, height1, width2, height2 = parameter_input()
         first_envelop = Envelope(width1, height1)
         second_envelop = Envelope(width2, height2)
 
